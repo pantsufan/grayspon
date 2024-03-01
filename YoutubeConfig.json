@@ -1,14 +1,14 @@
 {
-	"name": "Youtube",
+	"name": "Youtube v2",
 	"description": "One of the biggest video platforms owned by Google",
 	"author": "FUTO",
 	"authorUrl": "https://futo.org",
 	"platformUrl": "https://youtube.com",
-	"sourceUrl": "https://plugins.grayjay.app/Youtube/YoutubeConfig.json",
+	"sourceUrl": "https://pantsufan.github.io/grayspon/YoutubeConfig.json",
 	"repositoryUrl": "https://futo.org",
-	"scriptUrl": "./YoutubeScript.js",
+	"scriptUrl": "https://pantsufan.github.io/grayspon/YoutubeScript.js",
 	"version": 166,
-	"iconUrl": "./youtube.png",
+	"iconUrl": "https://pantsufan.github.io/grayspon/youtube.png",
 	"id": "35ae969a-a7db-11ed-afa1-0242ac120002",
 
 	"scriptSignature": "",
