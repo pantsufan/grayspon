@@ -1,141 +1,143 @@
 {
-	"name": "Youtube SB",
-	"description": "Fork with full SponsorBlock",
-	"author": "pantsufan",
-	"authorUrl": "https://github.com/pantsufan/grayspon",
-	"platformUrl": "https://youtube.com",
-	"sourceUrl": "https://pantsufan.github.io/grayspon/YoutubeConfig.json",
-	"repositoryUrl": "https://github.com/pantsufan/grayspon",
-	"scriptUrl": "https://pantsufan.github.io/grayspon/YoutubeScript.js",
-	"version": 168,
-	"iconUrl": "https://pantsufan.github.io/grayspon/youtube.png",
-	"id": "73b80cf3-8fa5-4969-a5a0-03713d80aeb4",
+  "name": "Youtube SB",
+  "description": "Fork with full SponsorBlock",
+  "author": "pantsufan",
+  "authorUrl": "https://github.com/pantsufan/grayspon",
+  "platformUrl": "https://youtube.com",
+  "sourceUrl": "https://pantsufan.github.io/grayspon/YoutubeConfig.json",
+  "repositoryUrl": "https://github.com/pantsufan/grayspon",
+  "scriptUrl": "https://pantsufan.github.io/grayspon/YoutubeScript.js",
+  "version": 168,
+  "iconUrl": "https://pantsufan.github.io/grayspon/youtube.png",
+  "id": "73b80cf3-8fa5-4969-a5a0-03713d80aeb4",
 
-	"scriptSignature": "",
-	"scriptPublicKey": "",
-	"packages": ["Http", "Utilities"],
+  "scriptSignature": "",
+  "scriptPublicKey": "",
+  "packages": ["Http", "Utilities", "DOMParser"],
 
-	"subscriptionRateLimit": 140,
-	
-	"allowEval": false,
-	"allowUrls": [
-		"youtube.com",
-		"m.youtube.com",
-		"www.youtube.com",
-		"youtu.be",
-		"www.youtu.be",
-		"m.youtu.be",
-		"s.youtube.com",
-		"consent.youtube.com",
-		"suggestqueries-clients6.youtube.com",
-		"youtubei.googleapis.com",
-		"www.google.com",
-		"google.com",
-		"returnyoutubedislikeapi.com",
-		"sponsor.ajay.app"
-	],
+  "subscriptionRateLimit": 140,
 
-	"settings": [
-		{
-			"variable": "authChannels",
-			"name": "Use Login for Channels",
-			"description": "Use authenticated client for channel (videos) requests. (eg. for member videos)",
-			"type": "Boolean",
-			"default": "false"
-		},
-		{
-			"variable": "authDetails",
-			"name": "Use Login for video details",
-			"description": "Use authenticated client for video requests. (eg. for member videos)",
-			"type": "Boolean",
-			"default": "false"
-		},
-		{
-			"variable": "youtubeActivity",
-			"name": "Provide Youtube Activity",
-			"description": "Use authenticated client for playback, telling Youtube what you watched.",
-			"type": "Boolean",
-			"default": "false"
-		},
-		{
-			"variable": "allowAgeRestricted",
-			"name": "Allow Age Restricted",
-			"description": "Allow watching of age restricted videos",
-			"type": "Boolean",
-			"default": "false"
-		},
-		{
-			"variable": "allowControversialRestricted",
-			"name": "Allow Controversial Restricted",
-			"description": "Allow watching of controversial restricted videos",
-			"type": "Boolean",
-			"default": "false"
-		},
-		{
-			"variable": "youtubeDislikerHeader",
-			"name": "Return Youtube Dislike",
-			"description": "This is a third-party database of video dislikes that combines historic data, crowd-sourced data, and estimations, and may not be accurate.\n\n(Using https://returnyoutubedislike.com)",
-			"type": "Header"
-		},
-		{
-			"variable": "youtubeDislikes",
-			"name": "Enable",
-			"description": "Use Return YoutubeDislike to provide dislikes for videos",
-			"type": "Boolean",
-			"default": "false"
-		},
-		{
-			"variable": "sponsorBlockHeader",
-			"name": "SponsorBlock",
-			"description": "This is NOT Adblock. SponsorBlock allows you to (automatically) skip in-video sponsor segments.\nIt will harm creators.\n\n(Using https://sponsor.ajay.app)\n\nFUTO respects your decision to use SponsorBlock. But only if you're supporting creators in other ways.",
-			"type": "Header"
-		},
-		{
-			"variable": "sponsorBlock",
-			"name": "Enable",
-			"description": "If enabled support creators in other ways.\nDo not freeload.",
-			"type": "Boolean",
-			"default": "false",
-			"warningDialog": "SponsorBlock will harm creators.\nDo not freeload, support creators in other ways."
-		},
-		{
-			"variable": "sponsorBlockNoVotes",
-			"name": "Allow No Vote Segments",
-			"description": "Allow segments without votes, this may cause questionable video skips.",
-			"type": "Boolean",
-			"default": "false",
-			"dependency": "sponsorBlock"
-		},
-		{
-			"variable": "sponsorBlockType",
-			"name": "Skip Type",
-			"description": "Change skip behavior for SponsorBlock. Automatic may cause unexpected skipping for some users, and thus not recommended.",
-			"type": "Dropdown",
-			"default": "0",
-			"dependency": "sponsorBlock",
-			"options": ["Manual", "Automatic"]
-		}
-	],
+  "allowEval": false,
+  "allowUrls": [
+    "youtube.com",
+    "m.youtube.com",
+    "www.youtube.com",
+    "youtu.be",
+    "www.youtu.be",
+    "m.youtu.be",
+    "s.youtube.com",
+    "consent.youtube.com",
+    "suggestqueries-clients6.youtube.com",
+    "youtubei.googleapis.com",
+    "www.google.com",
+    "google.com",
+    "returnyoutubedislikeapi.com",
+    "sponsor.ajay.app"
+  ],
 
-	"captcha": {
-		"userAgent": "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.153 Mobile Safari/537.36",
-		"captchaUrl": null,
-		"cookiesToFind": ["GOOGLE_ABUSE_EXEMPTION"]
-	},
-	
-	"authentication": {
-		"userAgent": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.230 Mobile Safari/537.36",
-		"completionUrl": "https://m.youtube.com/youtubei/v1/guide?*",
-		"loginUrl": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252Fchannel_switcher&hl=en&ec=65620",
-		"headersToFind": ["authorization"],
-		"domainHeadersToFind": {
-			".youtube.com": ["authorization"]
-		},
-		"cookiesToFind": ["SIDCC"],
-		"cookiesExclOthers": false,
-		"loginWarning": "You must select a profile after login for authentication to complete."
-	},
+  "settings": [
+    {
+      "variable": "authChannels",
+      "name": "Use Login for Channels",
+      "description": "Use authenticated client for channel (videos) requests. (eg. for member videos)",
+      "type": "Boolean",
+      "default": "false"
+    },
+    {
+      "variable": "authDetails",
+      "name": "Use Login for video details",
+      "description": "Use authenticated client for video requests. (eg. for member videos)",
+      "type": "Boolean",
+      "default": "false"
+    },
+    {
+      "variable": "youtubeActivity",
+      "name": "Provide Youtube Activity",
+      "description": "Use authenticated client for playback, telling Youtube what you watched.",
+      "type": "Boolean",
+      "default": "false"
+    },
+    {
+      "variable": "allowAgeRestricted",
+      "name": "Allow Age Restricted",
+      "description": "Allow watching of age restricted videos",
+      "type": "Boolean",
+      "default": "false"
+    },
+    {
+      "variable": "allowControversialRestricted",
+      "name": "Allow Controversial Restricted",
+      "description": "Allow watching of controversial restricted videos",
+      "type": "Boolean",
+      "default": "false"
+    },
+    {
+      "variable": "youtubeDislikerHeader",
+      "name": "Return Youtube Dislike",
+      "description": "This is a third-party database of video dislikes that combines historic data, crowd-sourced data, and estimations, and may not be accurate.\n\n(Using https://returnyoutubedislike.com)",
+      "type": "Header"
+    },
+    {
+      "variable": "youtubeDislikes",
+      "name": "Enable",
+      "description": "Use Return YoutubeDislike to provide dislikes for videos",
+      "type": "Boolean",
+      "default": "false"
+    },
+    {
+      "variable": "sponsorBlockHeader",
+      "name": "SponsorBlock",
+      "description": "This is NOT Adblock. SponsorBlock allows you to (automatically) skip in-video sponsor segments.\nIt will harm creators.\n\n(Using https://sponsor.ajay.app)\n\nFUTO respects your decision to use SponsorBlock. But only if you're supporting creators in other ways.",
+      "type": "Header"
+    },
+    {
+      "variable": "sponsorBlock",
+      "name": "Enable",
+      "description": "If enabled support creators in other ways.\nDo not freeload.",
+      "type": "Boolean",
+      "default": "false",
+      "warningDialog": "SponsorBlock will harm creators.\nDo not freeload, support creators in other ways."
+    },
+    {
+      "variable": "sponsorBlockNoVotes",
+      "name": "Allow No Vote Segments",
+      "description": "Allow segments without votes, this may cause questionable video skips.",
+      "type": "Boolean",
+      "default": "false",
+      "dependency": "sponsorBlock"
+    },
+    {
+      "variable": "sponsorBlockType",
+      "name": "Skip Type",
+      "description": "Change skip behavior for SponsorBlock. Automatic may cause unexpected skipping for some users, and thus not recommended.",
+      "type": "Dropdown",
+      "default": "0",
+      "dependency": "sponsorBlock",
+      "options": ["Manual", "Automatic"]
+    }
+  ],
 
-	"supportedClaimTypes": [2],
-	"primaryClaimFieldType": 1
+  "developerSubmitUrl": "https://dev.grayjay.app/api/Dev/Submit",
+
+  "captcha": {
+    "userAgent": "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.153 Mobile Safari/537.36",
+    "captchaUrl": null,
+    "cookiesToFind": ["GOOGLE_ABUSE_EXEMPTION"]
+  },
+
+  "authentication": {
+    "userAgent": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.230 Mobile Safari/537.36",
+    "completionUrl": "https://m.youtube.com/youtubei/v1/guide?*",
+    "loginUrl": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252Fchannel_switcher&hl=en&ec=65620",
+    "headersToFind": ["authorization"],
+    "domainHeadersToFind": {
+      ".youtube.com": ["authorization"]
+    },
+    "cookiesToFind": ["SIDCC"],
+    "cookiesExclOthers": false,
+    "loginWarning": "You must select a profile after login for authentication to complete."
+  },
+
+  "supportedClaimTypes": [2],
+  "primaryClaimFieldType": 1
 }
